@@ -43,6 +43,21 @@ if False:
 	dataset.hist()
 	plt.show()
 
-# scatter plot matrix
-scatter_matrix(dataset)
-plt.show()
+	# scatter plot matrix
+	scatter_matrix(dataset)
+	plt.show()
+
+
+# Split-out validation dataset
+# DataFrame.values
+#	Numpy representation of NDFrame
+array = dataset.values
+X = array[:,0:4]
+Y = array[:,4]
+validation_size = 0.20
+seed = 7
+X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
+
+
+
+
